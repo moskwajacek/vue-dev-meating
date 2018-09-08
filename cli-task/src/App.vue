@@ -1,4 +1,3 @@
-<!--10- 1. There's a <template> part -->
 <template>
   <div id="app">
     <h2>Name list</h2>
@@ -25,7 +24,7 @@ export default {
   data() {
     return {
         itemName: "",
-
+        
         products: [{
           id: 0,
           name: 'Jacek'
@@ -60,6 +59,7 @@ export default {
         //     this.products.
         // }
       }
+
 }
 </script>
 
