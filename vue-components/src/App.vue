@@ -10,7 +10,7 @@
 import ItemsList from './components/ItemsList';
 import AddProduct from './components/AddProduct';
 
-import uuid from 'uuid/v4';
+
 
 export default {
   name: 'app',
