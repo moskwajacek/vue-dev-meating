@@ -16,11 +16,14 @@
       <li v-for="p in products">{{ p.name }}</li>
     </ul>
 
-    <p v-if="!products.length">No products!</p>
-
-
+    <p v-if="!products.length">No items!</p>
 
     <button v-on:click="addItem()">Add static item</button>
+
+    <form v-on:submit.prevent="addItemInput">
+        Item Name: <input type="text" name="fname" v-model="itemName"><br>
+        <input type="submit" value="Submit">
+      </form>
   </div>
 
 
@@ -29,6 +32,7 @@
     const app = new Vue({
       el: '#app',
       data: {
+        itemName: "",
 
         products: [{
           id: 0,
@@ -52,6 +56,13 @@
               id: this.products.length,
               name: this.products.length + 1
           });
+        },
+        addItemInput() {
+          this.products.push({
+              id: this.products.length,
+              name: this.itemName
+          });
+          this.itemName = ""
         }
       }
 
