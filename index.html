@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Start</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+
+  <div id="app">
+    <h2>Name list</h2>
+    <ul>
+      <li v-for="p in products">{{ p.name }}</li>
+    </ul>
+
+    <p v-if="!products.length">No products!</p>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+
+        products: [{
+          id: 0,
+          name: 'Jacek'
+        }, 
+        {
+          id: 1,
+          name: 'szymon'
+        },
+        {
+            id: 2,
+            name: "Marcin"
+
+        }]
+      },
+
+      
+    })
+  </script>
+</body>
+
+</html>
