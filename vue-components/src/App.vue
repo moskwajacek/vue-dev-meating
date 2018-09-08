@@ -1,8 +1,8 @@
 <template>
     <div id="app">
     <h2>My list</h2>
-    <items-list :products="products"></items-list>
-    <add-product @add-product="onAddProduct"></add-product>
+    <ItemsList :products="products" @item-remove="removeItem"></ItemsList>
+    <AddProduct @add-product="onAddProduct"></AddProduct>
   </div>
 </template>
 
@@ -32,6 +32,9 @@ export default {
   methods: {
     onAddProduct(product) {
       this.products.push(product);
+    },
+    removeItem(itemId) {
+      this.products = this.products.filter( el => el.id !== itemId )
     }
   }
 }

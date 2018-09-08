@@ -11,7 +11,7 @@
     <div v-show="errors.has('product')">{{ errors.first('product') }}</div>
 
     <form v-on:submit.prevent="addItemInput">
-        Item Name: <input type="text" name="fname" v-model="itemName" v-validate="'required|min:3'"><br>
+        Item Name: <input name="product" v-model="itemName" v-validate="'required|min:3'"><br>
         <input type="submit" value="Submit">
       </form>
   </div>
