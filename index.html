@@ -17,6 +17,10 @@
     </ul>
 
     <p v-if="!products.length">No products!</p>
+
+
+
+    <button v-on:click="addItem()">Add static item</button>
   </div>
 
 
@@ -32,7 +36,7 @@
         }, 
         {
           id: 1,
-          name: 'szymon'
+          name: 'Szymon'
         },
         {
             id: 2,
@@ -40,6 +44,16 @@
 
         }]
       },
+
+      methods: {
+
+        addItem() {
+          this.products.push({
+              id: this.products.length + 1,
+              name: this.products.length + 1
+          });
+        }
+      }
 
       
     })
